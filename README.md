@@ -7,4 +7,4 @@
 😀 I am __LEE Junki__  
 🧪 **This is a repository for my experiments and testing!**
 
-<center><h1>502 Bad Gateway</h1></center><hr><center>nginx/1.28.0</center>
+<div style="text-align: center;"><h1>502 Bad Gateway</h1><hr>nginx/1.28.0</div>

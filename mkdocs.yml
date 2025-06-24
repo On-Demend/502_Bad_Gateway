@@ -1,0 +1,16 @@
+site_name: On-Demend
+site_url: https://on-demend.github.io/502_Bad_Gateway/
+site_description: 502 Bad Gateway
+site_author: On-Demand
+repo_url: https://github.com/On-Demend/502_Bad_Gateway
+repo_name: On-Demend/502_Bad_Gateway
+edit_uri: edit/main/docs/
+language: ko
+nav:
+  - "Home": index.md
+theme:
+  name: bootstrap386
+  logo: "logos/on-demend.png"
+  favicon: "logos/on-demend.png"
+  icon:
+    repo: fontawesome/brands/github

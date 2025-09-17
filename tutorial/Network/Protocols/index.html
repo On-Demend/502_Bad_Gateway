@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="502 Bad Gateway">
+        <meta name="author" content="On-Demand">
+        <link rel="canonical" href="https://on-demend.github.io/502_Bad_Gateway/tutorial/Network/Protocols/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Protocols - On-Demend</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../..">On-Demend</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../..">Linux</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="../../..">Network</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="next" href="../IP/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../HTTP/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                <li>
+                    <a href="https://github.com/On-Demend/502_Bad_Gateway">
+                        
+                        On-Demend/502_Bad_Gateway
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+      
+    
+        <li class="main active"><a href="#protocols">Protocols</a></li>
+        
+            <li><a href="#osi-7">OSI 7 계층 모델</a></li>
+        
+            <li><a href="#tcpip-4">TCP/IP 4 계층 모델</a></li>
+        
+            <li><a href="#encapsulationdecapsulation">캡슐화/역캡슐화 (Encapsulation/Decapsulation)</a></li>
+        
+            <li><a href="#_1">전송 계층 프로토콜</a></li>
+        
+            <li><a href="#handshake">Handshake</a></li>
+        
+            <li><a href="#3">라우팅 (3계층)</a></li>
+        
+            <li><a href="#_2">주요 프로토콜</a></li>
+        
+    
+    
+    </ul>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="protocols">Protocols</h1>
+<h3 id="osi-7">OSI 7 계층 모델</h3>
+<ol>
+<li><strong>물리 계층 (Physical)</strong>  <ul>
+<li>전기적·기계적 신호로 비트 전송  </li>
+</ul>
+</li>
+<li><strong>데이터 링크 계층 (Data Link)</strong>  <ul>
+<li>프레임 단위 오류 검출·수정, MAC 주소 사용  </li>
+</ul>
+</li>
+<li><strong>네트워크 계층 (Network)</strong>  <ul>
+<li>패킷 전송·라우팅, IP 주소 사용  </li>
+</ul>
+</li>
+<li><strong>전송 계층 (Transport)</strong>  <ul>
+<li>종단 간 신뢰성·흐름 제어, TCP/UDP 포트 번호 사용  </li>
+</ul>
+</li>
+<li><strong>세션 계층 (Session)</strong>  <ul>
+<li>통신 세션 설정·유지·종료  </li>
+</ul>
+</li>
+<li><strong>표현 계층 (Presentation)</strong>  <ul>
+<li>데이터 형식 변환·암호화·압축  </li>
+</ul>
+</li>
+<li><strong>응용 계층 (Application)</strong>  <ul>
+<li>사용자 인터페이스 제공, HTTP·FTP 등 프로토콜 동작</li>
+</ul>
+</li>
+</ol>
+<h3 id="tcpip-4">TCP/IP 4 계층 모델</h3>
+<ol>
+<li><strong>네트워크 인터페이스 계층</strong>  <ul>
+<li>물리·데이터 링크 계층 역할  </li>
+</ul>
+</li>
+<li><strong>인터넷 계층</strong>  <ul>
+<li>IP를 통한 패킷 전달·라우팅  </li>
+</ul>
+</li>
+<li><strong>전송 계층</strong>  <ul>
+<li>TCP·UDP를 통한 종단 간 전송  </li>
+</ul>
+</li>
+<li><strong>응용 계층</strong>  <ul>
+<li>HTTP·DNS·SMTP 등 애플리케이션 프로토콜</li>
+</ul>
+</li>
+</ol>
+<h2 id="encapsulationdecapsulation">캡슐화/역캡슐화 (Encapsulation/Decapsulation)</h2>
+<ul>
+<li><strong>캡슐화</strong>: 상위 계층의 데이터를 하위 계층 헤더(및 트레일러)와 결합  </li>
+<li><strong>역캡슐화</strong>: 수신 측에서 하위 계층 헤더를 순차 제거하면서 상위 계층으로 전달</li>
+</ul>
+<h2 id="_1">전송 계층 프로토콜</h2>
+<h3 id="tcp">TCP</h3>
+<ul>
+<li><strong>헤더 주요 필드</strong>: Source Port, Dest Port, Seq, Ack, Flags, Window 등  </li>
+<li><strong>특징</strong>:  <ul>
+<li>연결 지향 (Connection-oriented)  </li>
+<li>신뢰성 보장 (재전송·오더링)  </li>
+<li>흐름 제어·혼잡 제어 지원</li>
+</ul>
+</li>
+</ul>
+<h3 id="udp">UDP</h3>
+<ul>
+<li><strong>헤더 주요 필드</strong>: Source Port, Dest Port, Length, Checksum  </li>
+<li><strong>특징</strong>:  <ul>
+<li>비연결성 (Connection-less)  </li>
+<li>낮은 오버헤드  </li>
+<li>실시간 전송(VoIP, 스트리밍) 적합</li>
+</ul>
+</li>
+</ul>
+<h2 id="handshake">Handshake</h2>
+<h3 id="3-way-handshake-tcp">3-Way Handshake (TCP 연결 수립)</h3>
+<ol>
+<li>클라이언트 → 서버: <strong>SYN</strong>  </li>
+<li>서버 → 클라이언트: <strong>SYN-ACK</strong>  </li>
+<li>클라이언트 → 서버: <strong>ACK</strong></li>
+</ol>
+<h3 id="4-way-handshake-tcp">4-Way Handshake (TCP 연결 해제)</h3>
+<ol>
+<li>A → B: <strong>FIN</strong>  </li>
+<li>B → A: <strong>ACK</strong>  </li>
+<li>B → A: <strong>FIN</strong>  </li>
+<li>A → B: <strong>ACK</strong></li>
+</ol>
+<h2 id="3">라우팅 (3계층)</h2>
+<ul>
+<li><strong>라우팅</strong>: 목적지 IP에 따라 패킷을 최적 경로로 전달</li>
+</ul>
+<h3 id="static-routing">Static Routing</h3>
+<ul>
+<li>관리자가 수동으로 경로 설정  </li>
+<li>네트워크 변경 시 수동 수정 필요</li>
+</ul>
+<h3 id="dynamic-routing">Dynamic Routing</h3>
+<ul>
+<li>OSPF, BGP 등 프로토콜로 자동 경로 학습·분배  </li>
+<li>토폴로지 변화에 대응</li>
+</ul>
+<h3 id="default-routing">Default Routing</h3>
+<ul>
+<li>명시적 경로가 없을 때 모든 트래픽을 특정 게이트웨이로 전달</li>
+</ul>
+<h2 id="_2">주요 프로토콜</h2>
+<ul>
+<li><strong>HTTP</strong>: 웹 서비스 요청·응답, 포트 80 (포트 8080도 많이 사용) </li>
+<li><strong>HTTPS</strong>: TLS/SSL 암호화 HTTP, 포트 443  </li>
+<li><strong>SSH</strong>: 원격 로그인·명령 실행, 포트 22, 암호화 터널링  </li>
+<li><strong>FTP</strong>: 파일 전송, 제어(21)/데이터(20) 포트, Active/Passive 모드  </li>
+<li><strong>SMTP</strong>: 메일 발송, 포트 25/587  </li>
+<li><strong>DNS</strong>: 도메인 이름 ↔ IP 매핑, 포트 53, UDP/TCP  </li>
+<li><strong>DHCP</strong>: 동적 IP 할당, 포트 67/68  </li>
+<li><strong>SNMP</strong>: 네트워크 관리, 포트 161/162  </li>
+<li><strong>NTP</strong>: 시간 동기화, 포트 123  </li>
+<li><strong>MQTT</strong>: 경량 메시징, IoT·마이크로서비스, 포트 1883  </li>
+<li><strong>gRPC</strong>: HTTP/2 기반 원격 프로시저 호출, 마이크로서비스 통신</li>
+</ul></div>
+                </div>
+        </div>
+
+    <hr>
+    <footer class="container">
+        
+        <center>Documentation built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="http://kristopolous.github.io/BOOTSTRA.386">BOOTSTRA.386</a>.</center>
+    </footer>
+        <script src="../../../../../../search/main.js"></script>
+    </body>
+</html>

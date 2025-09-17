@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="502 Bad Gateway">
+        <meta name="author" content="On-Demand">
+        <link rel="canonical" href="https://on-demend.github.io/502_Bad_Gateway/tutorial/Network/HTTP/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>HTTP - On-Demend</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../..">On-Demend</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../..">Linux</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="../../..">Network</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="next" href="../Protocols/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                <li>
+                    <a href="https://github.com/On-Demend/502_Bad_Gateway">
+                        
+                        On-Demend/502_Bad_Gateway
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+      
+    
+        <li class="main active"><a href="#http">HTTP</a></li>
+        
+            <li><a href="#http_1">HTTP란?</a></li>
+        
+            <li><a href="#_1">기본 구조</a></li>
+        
+            <li><a href="#http-method">HTTP 요청 메서드 (Method)</a></li>
+        
+            <li><a href="#http-status-code">HTTP 상태 코드 (Status Code)</a></li>
+        
+            <li><a href="#http-header">HTTP 헤더 (Header)</a></li>
+        
+            <li><a href="#http-vs-https">HTTP vs HTTPS</a></li>
+        
+            <li><a href="#_7">특징</a></li>
+        
+            <li><a href="#_8">정리</a></li>
+        
+    
+    
+    </ul>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="http">HTTP</h1>
+<h2 id="http_1">HTTP란?</h2>
+<ul>
+<li><strong>HTTP(HyperText Transfer Protocol)</strong>은 웹에서 데이터를 주고받기 위한 <strong>통신 규약(Protocol)</strong>  </li>
+<li>우리가 브라우저에서 주소창에 URL을 입력하면, 내부적으로 HTTP 요청을 보내고, 웹 서버가 응답을 보내는 방식으로 작동  </li>
+<li><strong>클라이언트-서버 모델</strong> 기반으로 동작</li>
+<li><strong>클라이언트(Client)</strong> : 웹 브라우저, 앱 등 요청을 보내는 쪽</li>
+<li><strong>서버(Server)</strong> : 요청을 받아 처리하고 응답하는 쪽</li>
+</ul>
+<hr />
+<h2 id="_1">기본 구조</h2>
+<p>HTTP는 크게 <strong>요청(Request)</strong>과 <strong>응답(Response)</strong>으로 구성됨.</p>
+<h3 id="1-request">1. 요청(Request)</h3>
+<p>클라이언트가 서버에 무엇을 해달라고 요구하는 메시지</p>
+<h4 id="_2">요청 구조 예시</h4>
+<pre><code>GET /index.html HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0
+Accept: text/html
+</code></pre>
+<ul>
+<li><strong>요청 라인</strong> : 어떤 동작을 할지 지정 (예: <code>GET /index.html HTTP/1.1</code>)</li>
+<li><strong>헤더(Header)</strong> : 부가 정보 전달 (예: 브라우저 정보, 언어, 인증 등)</li>
+<li><strong>본문(Body)</strong> : (필요할 경우) 서버로 보내는 데이터 (예: 회원가입 폼 정보)</li>
+</ul>
+<hr />
+<h3 id="2-response">2. 응답(Response)</h3>
+<p>서버가 요청을 처리한 뒤 클라이언트에 돌려주는 메시지</p>
+<h4 id="_3">응답 구조 예시</h4>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: text/html
+Content-Length: 1234
+
+&lt;html&gt;
+  &lt;body&gt;Hello, World!&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li><strong>상태 라인</strong> : 요청 처리 결과 (예: <code>200 OK</code>)</li>
+<li><strong>헤더(Header)</strong> : 응답에 대한 부가 정보 (예: 내용 형식, 길이, 캐시 정책 등)</li>
+<li><strong>본문(Body)</strong> : 실제 데이터(HTML, JSON, 이미지 등)</li>
+</ul>
+<hr />
+<h2 id="http-method">HTTP 요청 메서드 (Method)</h2>
+<p>클라이언트가 서버에게 원하는 <strong>동작</strong>을 지정하는 방식</p>
+<table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td>서버에서 데이터를 가져옴</td>
+<td>게시글 목록 보기</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td>서버에 데이터를 보냄</td>
+<td>회원가입, 로그인</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td>서버의 데이터를 통째로 교체</td>
+<td>프로필 전체 수정</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td>서버 데이터의 일부만 수정</td>
+<td>프로필의 닉네임만 수정</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td>서버에서 데이터 삭제</td>
+<td>게시글 삭제</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="http-status-code">HTTP 상태 코드 (Status Code)</h2>
+<p>서버가 요청에 대해 어떤 결과를 반환했는지 나타내는 숫자</p>
+<table>
+<thead>
+<tr>
+<th>코드 범위</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1xx</code></td>
+<td>정보(Information)</td>
+</tr>
+<tr>
+<td><code>2xx</code></td>
+<td>성공(Success)</td>
+</tr>
+<tr>
+<td><code>3xx</code></td>
+<td>리다이렉션(Redirection, 다른 위치로 이동)</td>
+</tr>
+<tr>
+<td><code>4xx</code></td>
+<td>클라이언트 에러(Client Error, 요청이 잘못됨)</td>
+</tr>
+<tr>
+<td><code>5xx</code></td>
+<td>서버 에러(Server Error, 서버 문제 발생)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">자주 쓰이는 상태 코드</h3>
+<ul>
+<li><strong>200 OK</strong> : 성공적으로 처리됨 &lt;-- 많이 보게됨</li>
+<li><strong>201 Created</strong> : 새로운 데이터가 성공적으로 만들어짐 &lt;-- 많이 보게됨</li>
+<li><strong>301 Moved Permanently</strong> : 요청한 리소스가 영구적으로 다른 위치로 이동  </li>
+<li><strong>400 Bad Request</strong> : 잘못된 요청 (문법 오류 등) &lt;-- 많이 보게됨 </li>
+<li><strong>401 Unauthorized</strong> : 인증 필요 (로그인 필요)  </li>
+<li><strong>403 Forbidden</strong> : 권한 없음  &lt;-- 많이 보게됨</li>
+<li><strong>404 Not Found</strong> : 요청한 리소스를 찾을 수 없음 &lt;-- 이건 알겠지??? </li>
+<li><strong>500 Internal Server Error</strong> : 서버 내부 오류 😈😈😈 &lt;-- 많이 보게됨;;</li>
+<li><strong>502 Bad Gateway</strong> : 백엔드 서버에서 정상적인 응답을 받지 못한 상태 (백엔드 서버가 죽은 경우가 많음) &lt;-- 많이 보게됨</li>
+<li><strong>503 Service Unavailable</strong> : 요청을 처리할 수 없는 상태 &lt;-- 많이 보게됨</li>
+</ul>
+<hr />
+<h2 id="http-header">HTTP 헤더 (Header)</h2>
+<p>요청과 응답에서 <strong>추가 정보</strong>를 전달하는 역할</p>
+<h3 id="_5">요청 헤더 예시</h3>
+<ul>
+<li><code>Host: www.example.com</code> → 접속할 서버 도메인</li>
+<li><code>User-Agent: Mozilla/5.0</code> → 클라이언트 정보 (브라우저/앱 종류)</li>
+<li><code>Accept: text/html</code> → 클라이언트가 원하는 응답 데이터 형식</li>
+</ul>
+<h3 id="_6">응답 헤더 예시</h3>
+<ul>
+<li><code>Content-Type: text/html</code> → 응답 본문의 데이터 형식</li>
+<li><code>Content-Length: 1234</code> → 응답 본문의 크기</li>
+<li><code>Set-Cookie: sessionId=abc123</code> → 클라이언트에 쿠키 저장</li>
+</ul>
+<hr />
+<h2 id="http-vs-https">HTTP vs HTTPS</h2>
+<ul>
+<li><strong>HTTP</strong> : 데이터를 암호화하지 않고 전송 → 도청/변조 위험</li>
+<li><strong>HTTPS</strong> : SSL/TLS 기반으로 데이터를 암호화 → 안전한 통신</li>
+<li>요즘은 거의 모든 웹사이트가 HTTPS를 사용함  </li>
+</ul>
+<hr />
+<h2 id="_7">특징</h2>
+<ul>
+<li><strong>Stateless (무상태성)</strong>  </li>
+<li>요청과 응답이 끝나면 연결을 유지하지 않음  </li>
+<li>서버는 이전 요청을 기억하지 않음  </li>
+<li>
+<p>(대신, 쿠키/세션/토큰 같은 방법으로 상태 유지 가능)  </p>
+</li>
+<li>
+<p><strong>Connectionless (비연결성)</strong>  </p>
+</li>
+<li>요청/응답 한 번 완료되면 연결을 끊음  </li>
+<li>HTTP/1.1부터는 <code>Keep-Alive</code>로 일정 시간 연결 유지 가능  </li>
+</ul>
+<hr />
+<h2 id="_8">정리</h2>
+<ul>
+<li>HTTP는 <strong>클라이언트-서버 간 데이터 통신 규약</strong>  </li>
+<li><strong>요청(Request)</strong> → 메서드, 헤더, 바디  </li>
+<li><strong>응답(Response)</strong> → 상태 코드, 헤더, 바디  </li>
+<li>대표적인 메서드 : GET, POST, PUT, PATCH, DELETE  </li>
+<li>대표적인 상태 코드 : 200, 404, 500 등  </li>
+<li>HTTP는 암호화되지 않고, HTTPS는 암호화된 안전한 프로토콜  </li>
+</ul></div>
+                </div>
+        </div>
+
+    <hr>
+    <footer class="container">
+        
+        <center>Documentation built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="http://kristopolous.github.io/BOOTSTRA.386">BOOTSTRA.386</a>.</center>
+    </footer>
+        <script src="../../../../../../search/main.js"></script>
+    </body>
+</html>

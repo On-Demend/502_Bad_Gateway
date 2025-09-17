@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="502 Bad Gateway">
+        <meta name="author" content="On-Demand">
+        <link rel="canonical" href="https://on-demend.github.io/502_Bad_Gateway/tutorial/Network/IP/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>IP & Subnet - On-Demend</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../..">On-Demend</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../..">Linux</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="../../..">Network</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="next" href="../../linux/exam2/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Protocols/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                <li>
+                    <a href="https://github.com/On-Demend/502_Bad_Gateway">
+                        
+                        On-Demend/502_Bad_Gateway
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+      
+    
+        <li class="main active"><a href="#ip">IP</a></li>
+        
+    
+        <li class="main "><a href="#subnet">SUBNET</a></li>
+        
+    
+    
+    </ul>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="ip">IP</h1>
+<ul>
+<li>IP 주소는 인터넷에 연결된 각 기기를 구별하기 위해 사용되는 고유한 번호</li>
+<li>IP는 프로토콜 자체이며, IP 주소는 IP 프로토콜로 통신을 하기위한 주소로 이해하면 됨. (ex: <code>192.168.35.100</code>, <code>172.30.1.2</code>)</li>
+<li>IP 주소는 IPv4와 IPv6 두 버전이 있음. (IPv4 기준으로 설명할 것임)<ul>
+<li>IPv4 </li>
+<li>IPv6 (전국대회에도 나오지 않음)</li>
+</ul>
+</li>
+<li>IP는 <code>0.0.0.0</code> ~ <code>255.255.255.255</code>까지 사용 가능</li>
+<li>공인 IP vs 사설 IP<ul>
+<li>공인 IP : 인터넷에서 직접 사용 가능한 IP</li>
+<li>사설 IP : 내부 네트워크에서만 사용하는 IP</li>
+<li>루프백 주소 : 자기 자신을 가리키는 IP 주소<ul>
+<li><code>127.0.0.1</code> ~ <code>127.255.255.255</code> 또는 <code>localhost</code>에서 사용 가능</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IP 대역대<ul>
+<li>A 클래스<ul>
+<li>공인 IP : <code>0.0.0.0</code> ~ <code>127.255.255.255</code></li>
+<li>사설 IP : <code>10.0.0.0</code> ~ <code>10.255.255.255</code></li>
+<li>SUBNET : <code>255.0.0.0</code> (/8) <b style="color: green; font-weight: normal;"># 아래 서브넷 설명 보고오는거 추천</b></li>
+<li>대규모 네트워크 (16,777,216개의 주소)</li>
+</ul>
+</li>
+<li>B 클래스<ul>
+<li>공인 IP : <code>128.0.0.0</code> ~ <code>191.255.255.255</code></li>
+<li>사설 IP : <code>172.16.0.0</code> ~ <code>172.31.255.255</code></li>
+<li>SUBNET : <code>255.255.0.0</code> (/16)</li>
+<li>대규모 네트워크 (65,536개의 주소)</li>
+</ul>
+</li>
+<li>C 클래스<ul>
+<li>공인 IP : <code>192.0.0.0</code> ~ <code>223.255.255.255</code></li>
+<li>사설 IP : <code>192.168.0.0</code> ~ <code>192.168.255.255</code></li>
+<li>SUBNET : <code>255.255.255.0</code> (/24)</li>
+<li>대규모 네트워크 (256개의 주소)</li>
+</ul>
+</li>
+<li>D 클래스 : 멀티 캐스트 전용 (<code>224.0.0.0</code> ~ <code>239.255.255.255</code>)</li>
+<li>E 클래스 : 연구용 (<code>240.0.0.0</code> ~ <code>255.255.255.255</code>)</li>
+<li><strong>NAT (Network Address Translation)</strong>  <ul>
+<li>사설 IP ↔ 공인 IP 매핑을 통해 인터넷 접속 지원</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>네트워크 주소와 브로드 캐스트 주소<ul>
+<li>네트워크 주소<ul>
+<li>하나의 네트워크 자체를 식별하는 용도</li>
+<li>서브넷에서 가장 첫번째 주소(시작 주소)를 사용</li>
+</ul>
+</li>
+<li>브로드캐스트 주소<ul>
+<li>네트워크에 포함된 <strong>모든</strong> 호스트에게 메시지 전송하는 용도</li>
+<li>서브넷에서 가장 마지막 주소를 사용</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="subnet">SUBNET</h1>
+<ul>
+<li>하나의 큰 네트워크를 작은 네트워크 단위로 나눈 것</li>
+<li>네트워크 자원을 효율적으로 관리</li>
+<li>서브넷 마스크(Subnet Mask)로 서브넷을 나눔</li>
+<li>서브넷 마스크 예시 : <code>255.255.255.0</code>으로 표현하며, 프리픽스 표기법으로는 <code>/24</code>로 표현</li>
+<li>서브넷 마스크<ul>
+<li>서브넷 마스크는 보통 <code>255.255.255.0</code>과 같이 10진수로 사용<ul>
+<li>2진수로 변환하면 32bit로 구성되어있음.</li>
+<li>8bit씩 <code>.</code>으로 구분하며, 이를 옥텟이라고 함.</li>
+<li>ex: 255.255.255.0 -&gt; 11111111.11111111.11111111.00000000<ul>
+<li>0이 8개므로, 128+64+32+16+8+4+2+1 = 사용 가능한 호스트 수 256개</li>
+</ul>
+</li>
+<li>2진수로 변환한 결과에서 <code>1</code>이 네트워크 주소, <code>0</code>이 호스트 주소를 의미</li>
+<li>서브넷 마스크를 프리픽스로 변환하면 2진수로 변환한 결과에서 <code>/1의 개수</code>로 나타냄</li>
+<li>ex: 255.255.255.128 -&gt; 11111111.11111111.11111111.10000000 = <code>/25</code></li>
+<li>네트워크 대역을 나타낼 때는 192.168.1.0/24 같이 나타냄</li>
+</ul>
+</li>
+<li>네트워크 &amp; 브로드캐스트 주소 예제<ul>
+<li>대역대 : 192.168.8.0/24</li>
+<li>네트워크 주소 : 192.168.8.0</li>
+<li>브로드캐스트 주소 : 192.168.8.255</li>
+<li>사용 가능한 호스트(기기)의 IP 범위 : 192.168.8.1 ~ 192.168.8.254</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>연습 문제<ol>
+<li>172.30.0.0/16의 브로드캐스트 주소를 구하시오.</li>
+<li>10.100.0.20/24 IP가 속해있는 네트워크 주소를 구하시오.</li>
+<li>192.168.0.0/26의 호스트 수는?</li>
+<li>10.193.0.0/20 대역 대에서 사용 가능한 호스트 개수만을 구하시오.</li>
+<li>192.168.0.8/30 은 호스트로 통신이 (가능)/(불가능) 하다.</li>
+<li>172.0.0.0/8에서 사용 가능한 가장 마지막 주소를 구하시오.</li>
+</ol>
+</li>
+</ul></div>
+                </div>
+        </div>
+
+    <hr>
+    <footer class="container">
+        
+        <center>Documentation built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="http://kristopolous.github.io/BOOTSTRA.386">BOOTSTRA.386</a>.</center>
+    </footer>
+        <script src="../../../../../../search/main.js"></script>
+    </body>
+</html>

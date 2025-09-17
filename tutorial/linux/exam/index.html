@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="502 Bad Gateway">
+        <meta name="author" content="On-Demand">
+        <link rel="canonical" href="https://on-demend.github.io/502_Bad_Gateway/tutorial/linux/exam/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Exam 1 - On-Demend</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../..">On-Demend</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href="../../..">Linux</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../..">Network</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="next" href="../commands/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../exam2/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                <li>
+                    <a href="https://github.com/On-Demend/502_Bad_Gateway">
+                        
+                        On-Demend/502_Bad_Gateway
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+      
+    
+        <li class="main active"><a href="#commands-linux-exam-easy">Commands - Linux Exam (EASY)</a></li>
+        
+            <li><a href="#1">1. 리눅스에서 최상위 디렉토리를 나타내는 기호는 무엇인가?</a></li>
+        
+            <li><a href="#2">2. 현재 자신이 위치한 디렉토리를 의미하는 기호는 무엇인가?</a></li>
+        
+            <li><a href="#3">3. 상위(부모) 디렉토리를 의미하는 기호는 무엇인가?</a></li>
+        
+            <li><a href="#4">4. 현재 위치한 작업 디렉토리의 절대 경로를 확인하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#5">5. 홈 디렉토리를 의미하는 기호는 무엇인가?</a></li>
+        
+            <li><a href="#6">6. 현재 디렉토리 안에 있는 파일과 디렉토리를 출력하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#7-test">7. 디렉토리 test로 이동하려면 어떤 명령어를 써야 하는가?</a></li>
+        
+            <li><a href="#8">8. 상위 디렉토리로 이동하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#9">9. 홈 디렉토리로 돌아가는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#10-newdir">10. 새로운 디렉토리 newdir을 만드는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#11-atxt">11. 빈 파일 a.txt를 만드는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#12-atxt">12. 파일 a.txt의 내용을 화면에 출력하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#13-atxt">13. 파일 a.txt의 앞부분만 확인하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#14-atxt">14. 파일 a.txt의 마지막 부분만 확인하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#15">15. 현재 로그인한 사용자의 이름을 확인하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#16">16. 현재 날짜와 시간을 출력하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#17">17. 현재 달력을 출력하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#18">18. 화면을 깨끗하게 지우고 싶을 때 사용하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#19">19. 현재 실행 중인 명령어 히스토리를 확인하는 명령어는 무엇인가?</a></li>
+        
+            <li><a href="#20">20. 터미널(세션)을 종료하는 명령어는 무엇인가?</a></li>
+        
+    
+    
+    </ul>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="commands-linux-exam-easy">Commands - Linux Exam (EASY)</h1>
+<h3 id="1">1. 리눅스에서 <strong>최상위 디렉토리</strong>를 나타내는 기호는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 : <code>/</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>/</code>는 루트 디렉토리를 의미하며, 모든 경로의 기준점이 된다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="2">2. 현재 자신이 위치한 디렉토리를 의미하는 기호는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 : <code>.</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>.</code>은 현재 디렉토리를 나타내며, 상대 경로에서 자주 사용된다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="3">3. 상위(부모) 디렉토리를 의미하는 기호는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 : <code>..</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>..</code>은 현재 디렉토리보다 한 단계 위의 디렉토리를 의미한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="4">4. 현재 위치한 작업 디렉토리의 절대 경로를 확인하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  pwd</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>pwd</code>는 "print working directory"의 약자이다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="5">5. 홈 디렉토리를 의미하는 기호는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 : <code>~</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>~</code>는 로그인한 사용자의 홈 디렉토리를 나타낸다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="6">6. 현재 디렉토리 안에 있는 파일과 디렉토리를 출력하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  ls</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>ls</code>는 list의 약자이며, 현재 디렉토리의 목록을 출력한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="7-test">7. 디렉토리 <code>test</code>로 이동하려면 어떤 명령어를 써야 하는가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  cd test</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>cd</code>는 change directory의 약자로, 디렉토리 이동에 사용된다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="8">8. 상위 디렉토리로 이동하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  cd ..</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>..</code>은 상위 디렉토리를 의미한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="9">9. 홈 디렉토리로 돌아가는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  cd ~</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>~</code>는 홈 디렉토리를 나타내며, <code>cd</code>만 입력해도 같은 효과가 있다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="10-newdir">10. 새로운 디렉토리 <code>newdir</code>을 만드는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  mkdir newdir</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>mkdir</code>는 make directory의 약자이다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="11-atxt">11. 빈 파일 <code>a.txt</code>를 만드는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  touch a.txt</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>touch</code>는 빈 파일을 만들거나 파일의 최종 수정 시간을 변경한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="12-atxt">12. 파일 <code>a.txt</code>의 내용을 화면에 출력하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  cat a.txt</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>cat</code>은 concatenate의 약자로, 파일 내용을 출력하거나 이어붙일 때 사용된다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="13-atxt">13. 파일 <code>a.txt</code>의 앞부분만 확인하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  head a.txt</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>head</code>는 기본적으로 10줄을 출력한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="14-atxt">14. 파일 <code>a.txt</code>의 마지막 부분만 확인하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  tail a.txt</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>tail</code>은 기본적으로 마지막 10줄을 출력한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="15">15. 현재 로그인한 사용자의 이름을 확인하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  whoami</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>whoami</code>는 "내가 누구인지" 출력한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="16">16. 현재 날짜와 시간을 출력하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  date</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>date</code>는 시스템 시간을 보여준다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="17">17. 현재 달력을 출력하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  cal</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>cal</code>은 간단한 달력을 표시한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="18">18. 화면을 깨끗하게 지우고 싶을 때 사용하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  clear</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>clear</code>는 터미널 출력을 초기화한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="19">19. 현재 실행 중인 명령어 히스토리를 확인하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  history</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>history</code>는 사용자가 입력한 명령어 기록을 보여준다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="20">20. 터미널(세션)을 종료하는 명령어는 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  exit</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>exit</code>는 현재 세션을 종료한다.</p>
+</li>
+</ul></div>
+                </div>
+        </div>
+
+    <hr>
+    <footer class="container">
+        
+        <center>Documentation built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="http://kristopolous.github.io/BOOTSTRA.386">BOOTSTRA.386</a>.</center>
+    </footer>
+        <script src="../../../../../../search/main.js"></script>
+    </body>
+</html>

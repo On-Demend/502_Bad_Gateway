@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="502 Bad Gateway">
+        <meta name="author" content="On-Demand">
+        <link rel="canonical" href="https://on-demend.github.io/502_Bad_Gateway/tutorial/linux/commands/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Commands - On-Demend</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../..">On-Demend</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href="../../..">Linux</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../..">Network</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="next" href="../what-is-linux/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../exam/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                <li>
+                    <a href="https://github.com/On-Demend/502_Bad_Gateway">
+                        
+                        On-Demend/502_Bad_Gateway
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+      
+    
+        <li class="main active"><a href="#commands-linux">Commands - Linux</a></li>
+        
+            <li><a href="#file-directory">📂 File &amp; Directory</a></li>
+        
+            <li><a href="#commands">✅ Commands</a></li>
+        
+            <li><a href="#_6">📄 파일 내용 보기 및 편집</a></li>
+        
+            <li><a href="#manage-package-apt">📦 Manage Package (APT 기반)</a></li>
+        
+            <li><a href="#manage-user-and-permission">👤 Manage User and Permission</a></li>
+        
+            <li><a href="#system-info-and-manage">🧠 System Info and Manage</a></li>
+        
+            <li><a href="#network-command">🌐 Network Command</a></li>
+        
+            <li><a href="#search-file">🔍 Search File</a></li>
+        
+            <li><a href="#etc">🧪 ETC</a></li>
+        
+    
+    
+    </ul>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="commands-linux">Commands - Linux</h1>
+<h2 id="file-directory">📂 File &amp; Directory</h2>
+<h3 id="_1">/ (루트)</h3>
+<p>리눅스는 최상위 디렉토리(폴더)를 / (루트) 디렉토리라고 함 (모든 파일과 디렉토리가 위치한 곳)</p>
+<ul>
+<li>
+<p>모든 경로는 반드시 / 를 기준으로 시작됨 (윈도우의 C 드라이브와 비슷)</p>
+</li>
+<li>
+<p>예: <code>/cloud/kmit</code></p>
+</li>
+</ul>
+<h3 id="_2">. (현재 디렉토리)</h3>
+<p>자신이 위치한 디렉토리를 리눅스에선 . 으로 표현</p>
+<h3 id="_3">.. (상위 디렉토리)</h3>
+<p>자신이 위치한 디렉토리의 상위 디렉토리를 .. 으로 표현 (한 단계 위)</p>
+<h3 id="_4">~ (홈 디렉토리)</h3>
+<p>현재 리눅스에 로그인한 사용자만의 디렉토리를 의미</p>
+<ul>
+<li><code>/home/&lt;본인의 사용자 이름&gt;</code>은 <code>~</code>과 같음</li>
+</ul>
+<h3 id="_5">작업 디렉토리</h3>
+<ul>
+<li>
+<p>현재 자신이 위치한(작업할) 디렉토리</p>
+</li>
+<li>
+<p>말 그대로 현재 자신이 위치한 디렉토리를 의미</p>
+</li>
+<li>
+<p><code>cd</code> 명령을 통해 디렉토리 변경 가능</p>
+</li>
+</ul>
+<hr />
+<h3 id="vs">절대 경로 vs 상대 경로</h3>
+<ul>
+<li>
+<p>절대 경로</p>
+<ul>
+<li>
+<p>/(루트) 를 기준으로 <strong>전체 경로</strong> 를 명시한 것</p>
+</li>
+<li>
+<p>항상 <code>/</code> 로 시작하는 경로로, 정확하게 지정 가능</p>
+</li>
+<li>
+<p>작업 디렉토리와는 무관하게 항상 동일한 위치 참조</p>
+</li>
+<li>
+<p>예: <code>/home/ec2-user/worldskills.py</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>상대 경로</p>
+<ul>
+<li>
+<p>현재 작업 디렉토리를 기준으로 경로를 지정하는 방식</p>
+</li>
+<li>
+<p>현재 위치에 따라 대상이 달라질 수도 있음</p>
+</li>
+<li>
+<p>예 : <code>asdf/</code> (<code>./asdf/</code>)</p>
+</li>
+<li>
+<p>예 : <code>../test</code></p>
+</li>
+<li>
+<p>예 : <code>dd.cpp</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>예시 - /test/kyungmin/ 디렉토리 내에 kmit 디렉토리가 있으며, 작업 디렉토리가 /test/kyungmin/ 일 때 kmit/ 의 경로를 나타내시오.</p>
+<ul>
+<li>
+<p>절대 경로 : <code>/test/kyungmin/kmit/</code></p>
+</li>
+<li>
+<p>상대 경로 : <code>./kmit/</code> 또는 <code>kmit/</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="commands">✅ Commands</h2>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls [경로]</code></td>
+<td>현재 디렉토리의 파일 및 디렉토리 목록 출력</td>
+</tr>
+<tr>
+<td><code>ls -l [경로]</code></td>
+<td>자세한 정보 포함 목록 출력</td>
+</tr>
+<tr>
+<td><code>ls -a [경로]</code></td>
+<td>숨김 파일 포함 목록 출력</td>
+</tr>
+<tr>
+<td><code>cd [디렉토리]</code></td>
+<td>작업 디렉토리(현재 디렉토리) 이동</td>
+</tr>
+<tr>
+<td><code>cd ~</code></td>
+<td>홈 디렉토리(사용자 디렉토리)로 이동</td>
+</tr>
+<tr>
+<td><code>cd ..</code></td>
+<td>상위 디렉토리로 이동</td>
+</tr>
+<tr>
+<td><code>pwd</code></td>
+<td>작업 디렉토리 경로 출력</td>
+</tr>
+<tr>
+<td><code>mkdir [디렉토리명]</code></td>
+<td>새 디렉토리 생성</td>
+</tr>
+<tr>
+<td><code>rmdir [디렉토리명]</code></td>
+<td>빈 디렉토리 삭제</td>
+</tr>
+<tr>
+<td><code>rm -r [디렉토리명]</code></td>
+<td>디렉토리와 내용 삭제</td>
+</tr>
+<tr>
+<td><code>rm -rf [디렉토리명]</code></td>
+<td>디렉토리와 내용을 <strong>강제</strong> 삭제</td>
+</tr>
+<tr>
+<td><code>touch [파일명]</code></td>
+<td>빈 파일 생성</td>
+</tr>
+<tr>
+<td><code>cp [원본] [대상]</code></td>
+<td>파일/디렉토리 복사</td>
+</tr>
+<tr>
+<td><code>mv [원본] [대상]</code></td>
+<td>파일/디렉토리 이동 또는 이름 변경</td>
+</tr>
+<tr>
+<td><code>rm [파일명]</code></td>
+<td>파일 삭제</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">📄 파일 내용 보기 및 편집</h2>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cat [파일명]</code></td>
+<td>파일 내용 출력</td>
+</tr>
+<tr>
+<td><code>more [파일명]</code></td>
+<td>파일을 페이지 단위로 출력</td>
+</tr>
+<tr>
+<td><code>less [파일명]</code></td>
+<td>위/아래로 탐색 가능한 페이지 출력</td>
+</tr>
+<tr>
+<td><code>head [파일명]</code></td>
+<td>파일 앞부분 출력</td>
+</tr>
+<tr>
+<td><code>tail [파일명]</code></td>
+<td>파일 뒷부분 출력</td>
+</tr>
+<tr>
+<td><code>nano [파일명]</code></td>
+<td>간단한 텍스트 편집기 실행</td>
+</tr>
+<tr>
+<td><code>vim [파일명]</code></td>
+<td>고급 텍스트 편집기 실행(중요)</td>
+</tr>
+<tr>
+<td><code>echo [문자열]</code></td>
+<td>문자열 출력 또는 파일에 저장 가능</td>
+</tr>
+<tr>
+<td><code>cat &gt; [파일명]</code></td>
+<td>새로운 파일에 내용 작성(리다이렉션(&gt;)을 통해 표준 출력 경로를 파일로 변경)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="manage-package-apt">📦 Manage Package (APT 기반)</h2>
+<blockquote>
+<p>(Ubuntu의 경우 apt를 사용하면 되지만, AWS에서 사용하는 Amazon Linux에서는 apt를 yum으로 바꾸면 됨)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sudo apt update</code></td>
+<td>패키지 목록 갱신</td>
+</tr>
+<tr>
+<td><code>sudo apt upgrade</code></td>
+<td>설치된 패키지 최신 버전으로 업그레이드(비권장)</td>
+</tr>
+<tr>
+<td><code>sudo apt install [패키지명]</code></td>
+<td>패키지 설치</td>
+</tr>
+<tr>
+<td><code>sudo apt remove [패키지명]</code></td>
+<td>패키지 제거</td>
+</tr>
+<tr>
+<td><code>sudo apt purge [패키지명]</code></td>
+<td>패키지와 설정까지 제거</td>
+</tr>
+<tr>
+<td><code>sudo apt autoremove</code></td>
+<td>더 이상 필요 없는 패키지 자동 제거</td>
+</tr>
+</tbody>
+</table>
+<h2 id="manage-user-and-permission">👤 Manage User and Permission</h2>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>whoami</code></td>
+<td>현재 사용자 이름 출력</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td>사용자 UID, GID 등 정보 출력</td>
+</tr>
+<tr>
+<td><code>sudo [명령어]</code></td>
+<td>관리자 권한으로 명령어 실행(중요)</td>
+</tr>
+<tr>
+<td><code>chmod [권한] [파일/디렉토리]</code></td>
+<td>파일/디렉토리 권한 변경</td>
+</tr>
+<tr>
+<td><code>chown [사용자]:[그룹] [파일/디렉토리]</code></td>
+<td>소유자 변경</td>
+</tr>
+<tr>
+<td><code>adduser [사용자명]</code></td>
+<td>사용자 추가</td>
+</tr>
+<tr>
+<td><code>deluser [사용자명]</code></td>
+<td>사용자 삭제</td>
+</tr>
+</tbody>
+</table>
+<h2 id="system-info-and-manage">🧠 System Info and Manage</h2>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uname -a</code></td>
+<td>커널 정보 등 시스템 정보 출력</td>
+</tr>
+<tr>
+<td><code>top</code></td>
+<td>실시간 시스템 상태 및 프로세스 출력</td>
+</tr>
+<tr>
+<td><code>htop</code></td>
+<td><code>top</code>보다 향상된 시스템 상태 확인 (패키지 필요)</td>
+</tr>
+<tr>
+<td><code>ps aux</code></td>
+<td>현재 실행 중인 프로세스 목록 출력</td>
+</tr>
+<tr>
+<td><code>df -h</code></td>
+<td>디스크 사용량 확인</td>
+</tr>
+<tr>
+<td><code>du -sh [디렉토리명]</code></td>
+<td>디렉토리 용량 확인</td>
+</tr>
+<tr>
+<td><code>free -h</code></td>
+<td>메모리 사용량 확인</td>
+</tr>
+<tr>
+<td><code>uptime</code></td>
+<td>시스템 가동 시간 확인</td>
+</tr>
+<tr>
+<td><code>reboot</code></td>
+<td>시스템 재부팅</td>
+</tr>
+<tr>
+<td><code>shutdown now</code></td>
+<td>시스템 즉시 종료</td>
+</tr>
+</tbody>
+</table>
+<h2 id="network-command">🌐 Network Command</h2>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ip a</code> 또는 <code>ifconfig</code></td>
+<td>네트워크 인터페이스 정보 확인</td>
+</tr>
+<tr>
+<td><code>ping [주소]</code></td>
+<td>네트워크 연결 테스트</td>
+</tr>
+<tr>
+<td><code>curl [URL]</code></td>
+<td>URL 요청 및 응답 보기</td>
+</tr>
+<tr>
+<td><code>wget [URL]</code></td>
+<td>파일 다운로드</td>
+</tr>
+<tr>
+<td><code>netstat -tuln</code></td>
+<td>열려 있는 포트 및 연결 정보 확인</td>
+</tr>
+<tr>
+<td><code>ss -tuln</code></td>
+<td><code>netstat</code> 대체 명령어</td>
+</tr>
+</tbody>
+</table>
+<h2 id="search-file">🔍 Search File</h2>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>find [경로] -name [파일명]</code></td>
+<td>파일명 기준 검색</td>
+</tr>
+<tr>
+<td><code>locate [파일명]</code></td>
+<td>인덱스 기반 빠른 검색 (업데이트: <code>sudo updatedb</code>)</td>
+</tr>
+<tr>
+<td><code>grep [패턴] [파일명]</code></td>
+<td>특정 패턴 검색</td>
+</tr>
+<tr>
+<td><code>grep -r [패턴] [디렉토리]</code></td>
+<td>하위 디렉토리까지 검색</td>
+</tr>
+</tbody>
+</table>
+<h2 id="etc">🧪 ETC</h2>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>history</code></td>
+<td>명령어 히스토리 출력</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>터미널 화면 지우기</td>
+</tr>
+<tr>
+<td><code>alias</code></td>
+<td>명령어 별칭 설정</td>
+</tr>
+<tr>
+<td><code>man [명령어]</code></td>
+<td>매뉴얼 페이지 보기</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>현재 날짜 및 시간 출력</td>
+</tr>
+<tr>
+<td><code>cal</code></td>
+<td>달력 출력</td>
+</tr>
+<tr>
+<td><code>exit</code></td>
+<td>터미널 종료</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+                </div>
+        </div>
+
+    <hr>
+    <footer class="container">
+        
+        <center>Documentation built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="http://kristopolous.github.io/BOOTSTRA.386">BOOTSTRA.386</a>.</center>
+    </footer>
+        <script src="../../../../../../search/main.js"></script>
+    </body>
+</html>

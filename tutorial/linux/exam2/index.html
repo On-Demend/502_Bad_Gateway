@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="502 Bad Gateway">
+        <meta name="author" content="On-Demand">
+        <link rel="canonical" href="https://on-demend.github.io/502_Bad_Gateway/tutorial/linux/exam2/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Exam 2 - On-Demend</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../..">On-Demend</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li class="active">
+                            <a href="../../..">Linux</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../../..">Network</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="next" href="../exam/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../Network/IP/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                <li>
+                    <a href="https://github.com/On-Demend/502_Bad_Gateway">
+                        
+                        On-Demend/502_Bad_Gateway
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+      
+    
+        <li class="main active"><a href="#commands-linux-exam-normal">Commands - Linux Exam (NORMAL)</a></li>
+        
+            <li><a href="#1-testabc-hello">1. 현재 작업 디렉토리가 /test/abc/일 때, 같은 위치에 있는 hello/ 디렉토리의 절대 경로와 상대 경로를 각각 쓰시오.</a></li>
+        
+            <li><a href="#2-secrettxt-worldskills">2. 현재 디렉토리에서 secret.txt라는 빈 파일을 만들고, 그 안에 "worldskills"라는 문자열을 저장하는 명령어를 작성하시오.</a></li>
+        
+            <li><a href="#3-homeec2-user-project-backup">3. /home/ec2-user/ 디렉토리 안에 있는 project 디렉토리를 /backup/으로 전체 복사하려면 어떤 명령어를 사용해야 하는가?</a></li>
+        
+            <li><a href="#4">4. 숨김 파일을 포함하여 현재 디렉토리의 파일과 디렉토리를 자세한 정보까지 확인하고 싶을 때 사용하는 명령어를 쓰시오.</a></li>
+        
+            <li><a href="#5">5. 현재 로그인한 사용자가 누구인지 확인하는 명령어를 쓰시오.</a></li>
+        
+            <li><a href="#6-data">6. 현재 디렉토리에서 data/라는 디렉토리를 강제로 삭제하려면 어떤 명령어를 사용하는가?</a></li>
+        
+            <li><a href="#7-etchosts-10">7. /etc/hosts 파일의 앞부분 10줄만 보고 싶을 때 사용하는 명령어를 쓰시오.</a></li>
+        
+            <li><a href="#8-processlog-error">8. process.log 파일 안에 "error"라는 문자열이 몇 번째 줄에 들어있는지 검색하려면 어떤 명령어를 사용하는가?</a></li>
+        
+            <li><a href="#9-gb-mb">9. 현재 시스템의 메모리 사용량을 사람이 읽기 편한 단위(GB, MB 등)로 확인하는 명령어를 쓰시오.</a></li>
+        
+            <li><a href="#10-ip-2">10. IP 주소 및 네트워크 인터페이스 정보를 확인할 수 있는 명령어 2가지를 쓰시오.</a></li>
+        
+            <li><a href="#11">11. 홈 디렉토리로 이동하는 명령어를 쓰시오.</a></li>
+        
+            <li><a href="#12">12. 현재 시스템이 얼마나 오랫동안 가동 중인지 확인하는 명령어를 쓰시오.</a></li>
+        
+            <li><a href="#13-nano-vim">13. nano와 vim의 차이점을 설명하시오.</a></li>
+        
+            <li><a href="#14-varlog">14. 특정 디렉토리 /var/log/의 전체 용량을 확인하는 명령어를 쓰시오.</a></li>
+        
+            <li><a href="#15-htop-command-not-found">15. htop 명령어가 command not found로 실행되지 않을 때 해결 방법을 쓰시오.</a></li>
+        
+            <li><a href="#16-oldnametxt-newnametxt">16. 파일 oldname.txt를 newname.txt로 이름 변경하는 명령어를 쓰시오.</a></li>
+        
+            <li><a href="#17">17. 현재 실행 중인 모든 프로세스를 확인하는 명령어를 쓰시오.</a></li>
+        
+            <li><a href="#18-8888">18. 네트워크 연결이 정상인지 8.8.8.8 서버로 확인하려면 어떤 명령어를 사용하는가?</a></li>
+        
+            <li><a href="#19-history">19. history 명령어의 역할은 무엇인가?</a></li>
+        
+            <li><a href="#20">20. 현재 날짜와 시간을 출력하는 명령어를 쓰시오.</a></li>
+        
+    
+    
+    </ul>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="commands-linux-exam-normal">Commands - Linux Exam (NORMAL)</h1>
+<h3 id="1-testabc-hello">1. 현재 작업 디렉토리가 <code>/test/abc/</code>일 때, 같은 위치에 있는 <code>hello/</code> 디렉토리의 <strong>절대 경로</strong>와 <strong>상대 경로</strong>를 각각 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :  </p>
+<ul>
+<li>절대 경로 : <code>/test/abc/hello/</code>  </li>
+<li>상대 경로 : <code>./hello/</code> 또는 <code>hello/</code>  </li>
+</ul>
+</li>
+<li>
+<p>해설 :<br />
+  절대 경로는 항상 <code>/</code>로 시작하며 루트부터 전체 경로를 지정해야 한다. 상대 경로는 현재 작업 디렉토리를 기준으로 하므로 <code>./hello/</code>와 같이 표현 가능하다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="2-secrettxt-worldskills">2. 현재 디렉토리에서 <code>secret.txt</code>라는 빈 파일을 만들고, 그 안에 <code>"worldskills"</code>라는 문자열을 저장하는 명령어를 작성하시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  touch secret.txt
+  echo "worldskills" &gt; secret.txt</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>touch</code>는 빈 파일을 생성할 때 사용된다. 이후 <code>echo</code>와 <code>&gt;</code> 리다이렉션을 이용하면 문자열을 파일 안에 쓸 수 있다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="3-homeec2-user-project-backup">3. <code>/home/ec2-user/</code> 디렉토리 안에 있는 <code>project</code> 디렉토리를 <code>/backup/</code>으로 <strong>전체 복사</strong>하려면 어떤 명령어를 사용해야 하는가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  cp -r /home/ec2-user/project /backup/</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>cp</code> 명령어에서 <code>-r</code> 옵션은 디렉토리 복사를 의미한다. 옵션이 없으면 디렉토리는 복사되지 않는다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="4">4. 숨김 파일을 포함하여 현재 디렉토리의 파일과 디렉토리를 <strong>자세한 정보</strong>까지 확인하고 싶을 때 사용하는 명령어를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  ls -la</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>-l</code>은 자세한 정보(권한, 소유자, 용량, 수정 시간)를 출력, <code>-a</code>는 숨김 파일을 포함한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="5">5. 현재 로그인한 사용자가 누구인지 확인하는 명령어를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  whoami</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>whoami</code>는 현재 로그인 세션의 사용자명을 출력한다. 비슷하게 <code>id</code>를 사용하면 UID, GID, 그룹 정보까지 확인 가능하다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="6-data">6. 현재 디렉토리에서 <code>data/</code>라는 디렉토리를 <strong>강제로 삭제</strong>하려면 어떤 명령어를 사용하는가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  rm -rf data/</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>rm -r</code>은 디렉토리와 내부 내용을 모두 삭제, <code>-f</code>는 삭제 시 확인을 묻지 않고 강제로 수행한다. 매우 위험하므로 신중히 사용해야 한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="7-etchosts-10">7. <code>/etc/hosts</code> 파일의 앞부분 10줄만 보고 싶을 때 사용하는 명령어를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  head /etc/hosts</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>head</code>는 파일의 앞부분을 출력한다. 기본은 10줄이며, <code>-n</code> 옵션으로 개수를 지정할 수 있다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="8-processlog-error">8. <code>process.log</code> 파일 안에 <code>"error"</code>라는 문자열이 몇 번째 줄에 들어있는지 검색하려면 어떤 명령어를 사용하는가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  grep -n "error" process.log</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>grep</code>은 특정 패턴을 검색하는 명령어이다. <code>-n</code> 옵션을 주면 해당 문자열이 포함된 줄 번호도 함께 출력한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="9-gb-mb">9. 현재 시스템의 메모리 사용량을 <strong>사람이 읽기 편한 단위(GB, MB 등)</strong>로 확인하는 명령어를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  free -h</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>free</code>는 메모리 사용량을 출력한다. <code>-h</code> 옵션을 주면 KB 대신 MB, GB 단위로 보기 쉽게 변환해준다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="10-ip-2">10. IP 주소 및 네트워크 인터페이스 정보를 확인할 수 있는 명령어 2가지를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  ip a
+  ifconfig</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+  최신 리눅스에서는 <code>ip a</code>를 주로 사용하지만, 구버전 호환성 때문에 <code>ifconfig</code>도 알아둘 필요가 있다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="11">11. 홈 디렉토리로 이동하는 명령어를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  cd ~</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>~</code>는 현재 로그인한 사용자의 홈 디렉토리를 의미한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="12">12. 현재 시스템이 얼마나 오랫동안 가동 중인지 확인하는 명령어를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  uptime</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>uptime</code>은 시스템이 부팅된 후 흐른 시간을 보여주며, 동시에 현재 사용자 수와 평균 부하도 표시한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="13-nano-vim">13. <code>nano</code>와 <code>vim</code>의 차이점을 설명하시오.</h3>
+<ul>
+<li>정답 :  </li>
+<li><code>nano</code> : 초보자 친화적인 간단한 텍스트 편집기  </li>
+<li>
+<p><code>vim</code> : 고급 텍스트 편집기, 다양한 모드와 강력한 기능 제공  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>nano</code>는 빠르고 간단히 텍스트를 수정할 때 사용, <code>vim</code>은 학습 곡선이 있지만 매우 강력하다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="14-varlog">14. 특정 디렉토리 <code>/var/log/</code>의 전체 용량을 확인하는 명령어를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  du -sh /var/log/</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>du</code>는 디렉토리 용량 확인, <code>-s</code>는 합계만 출력, <code>-h</code>는 사람이 읽기 좋은 단위로 표시한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="15-htop-command-not-found">15. <code>htop</code> 명령어가 <code>command not found</code>로 실행되지 않을 때 해결 방법을 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  sudo apt install htop</code><br />
+  (Amazon Linux는 <code>sudo yum install htop</code>)  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>htop</code>은 기본적으로 설치되지 않으므로 패키지 관리자를 통해 설치해야 한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="16-oldnametxt-newnametxt">16. 파일 <code>oldname.txt</code>를 <code>newname.txt</code>로 이름 변경하는 명령어를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  mv oldname.txt newname.txt</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>mv</code> 명령어는 파일 이동뿐만 아니라 파일명 변경에도 사용된다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="17">17. 현재 실행 중인 모든 프로세스를 확인하는 명령어를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  ps aux</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>ps</code>는 프로세스 상태 확인, <code>a</code>는 다른 사용자 포함, <code>u</code>는 사용자명 출력, <code>x</code>는 터미널과 연결되지 않은 프로세스도 표시한다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="18-8888">18. 네트워크 연결이 정상인지 <code>8.8.8.8</code> 서버로 확인하려면 어떤 명령어를 사용하는가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  ping 8.8.8.8</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>ping</code>은 ICMP 패킷을 보내 네트워크 연결 상태를 확인한다. 구글 DNS(8.8.8.8)는 테스트용으로 자주 사용된다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="19-history">19. <code>history</code> 명령어의 역할은 무엇인가?</h3>
+<ul>
+<li>
+<p>정답 :<br />
+  사용자가 이전에 입력한 명령어 목록을 출력한다.  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>history</code>는 터미널에서 실행한 명령어 기록을 볼 수 있으며, <code>!번호</code> 형식으로 특정 명령어를 재실행할 수도 있다.  </p>
+</li>
+</ul>
+<hr />
+<h3 id="20">20. 현재 날짜와 시간을 출력하는 명령어를 쓰시오.</h3>
+<ul>
+<li>
+<p>정답 :<br />
+<code>bash
+  date</code>  </p>
+</li>
+<li>
+<p>해설 :<br />
+<code>date</code> 명령어는 현재 시스템의 날짜와 시간을 출력한다. 형식 지정 옵션(<code>+%Y-%m-%d</code>) 등을 이용하면 원하는 포맷으로 출력할 수도 있다.  </p>
+</li>
+</ul></div>
+                </div>
+        </div>
+
+    <hr>
+    <footer class="container">
+        
+        <center>Documentation built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="http://kristopolous.github.io/BOOTSTRA.386">BOOTSTRA.386</a>.</center>
+    </footer>
+        <script src="../../../../../../search/main.js"></script>
+    </body>
+</html>
